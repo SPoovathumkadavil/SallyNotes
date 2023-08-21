@@ -7,15 +7,25 @@
 
 import SwiftUI
 
+struct ColorDetail: View {
+    var color: Color
+
+    var body: some View {
+        color.navigationTitle(color.description).ignoresSafeArea()
+    }
+}
+
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        ZStack {
+            Color(.black)
+                .ignoresSafeArea()
+                .opacity(0.0)
+                .frame(width: .infinity, height: .infinity)
+            
+            
         }
-        .padding()
+        .background(VisualEffect().ignoresSafeArea())
     }
 }
 
